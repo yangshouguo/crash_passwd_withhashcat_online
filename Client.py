@@ -13,9 +13,8 @@ def main():
     try:
         client_sock = socket(AF_INET, SOCK_STREAM)
         client_sock.connect(sock_server)
-        data = random.sample('abcdefghijklmnz',8)
-        data = ''.join(data)
-        data += ' 2'
+        data = '$6$9WbBd61T$bGOeNO09qbTDxsLLghNqoKPRlA.BzZQVOwvCs7CtfhX5y/diF1/pIQm.BsuhrzlP8BHcgC8YO8W.RH4L9dpYA1'
+        data += ' 1'
         print 'sending data:',data
         client_sock.sendall(data)
         print client_sock.recv(1024)
