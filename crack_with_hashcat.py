@@ -34,7 +34,7 @@ def print_passwd():
         os.system('rm %s' % saved_file_name)
 
 def print_help():
-    print "please use as: python crack.py '$1$uOM6WNc4$r3ZGeSB11q6UUSILqek3J1' example.dict"
+    print "please use as: python crack_with_hashcat.py '$1$uOM6WNc4$r3ZGeSB11q6UUSILqek3J1' example.dict"
 if len(sys.argv)<3:
     print_help()
 else:

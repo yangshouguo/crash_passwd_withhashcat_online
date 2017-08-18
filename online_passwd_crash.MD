@@ -17,5 +17,6 @@
 
 协议：hash串+字典组合方式
 
+hash串 ：$num$salt$hashvalue
 
 字典组合：1.字典1       2.字典2        3.字典3
