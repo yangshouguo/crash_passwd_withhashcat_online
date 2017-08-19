@@ -11,7 +11,8 @@ port = 7890 #监听本地端口
 sock = (host,port)
 log_dir_name = 'log.dat'
 log_dir_file = ''
-execute_cmd = 'python crack_with_hashcat.py '
+execute_cmd_big_dic = 'python crack_with_hashcat.py '
+execute_cmd_lighted_dic = './myencrypt '
 seprate = '--------------------------------------\n'
 #用于处理socket请求，读取协议内容，执行请求，返回数据
 class MStreamRequestHandler(StreamRequestHandler):
@@ -34,7 +35,10 @@ class MStreamRequestHandler(StreamRequestHandler):
     def get_crash_result(self,hashvalue, which_dic):#hashvalue -> 哈希串 ， which_dic -> 指定某一种字典
         time1 = time.localtime()
         back_cmd = '\'%s\' %s.dic' %(hashvalue,which_dic)
-        new_cmd = execute_cmd+back_cmd
+        if (which_dic == '1' or which_dic == '2'):
+            new_cmd = execute_cmd_lighted_dic + back_cmd
+        else :
+            new_cmd = execute_cmd_big_dic+back_cmd
         print new_cmd
         returndata = os.popen(new_cmd)
         result = returndata.read()
