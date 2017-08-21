@@ -81,7 +81,7 @@ int main(int argc ,char* argv[]){
         }*/
         //printf("pass_text_length : %d\n", strlen(pass_text ));
         if(is_right_passwd(salt ,pass_text, hashstring)){
-            printf("%s\n",pass_text);
+            printf("%s",pass_text);
             break;
         }
     }
