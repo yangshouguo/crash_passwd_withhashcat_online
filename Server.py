@@ -43,7 +43,7 @@ class MStreamRequestHandler(StreamRequestHandler):
         returndata = os.popen(new_cmd)
         result = returndata.read()
         if (len(result)<1):
-            result = '!!!not found!!!'
+            result = ''
         time2 = time.localtime()
 
 

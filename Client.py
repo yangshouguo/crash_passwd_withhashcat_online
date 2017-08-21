@@ -11,7 +11,7 @@ sock_server = (host,port)
 
 def print_help():
     
-    data = 'use this script as :python Client \'$6$9WbBd61T$bGOeNO09qbTDxsLLghNqoKPRlA.BzZQVOwvCs7CtfhX5y/diF1/pIQm.BsuhrzlP8BHcgC8YO8W.RH4L9dpYA1\' 1'
+    data = 'use this script as :python Client.py \'$6$9WbBd61T$bGOeNO09qbTDxsLLghNqoKPRlA.BzZQVOwvCs7CtfhX5y/diF1/pIQm.BsuhrzlP8BHcgC8YO8W.RH4L9dpYA1\' 1'
     print data
 
 def main():
@@ -24,7 +24,6 @@ def main():
         client_sock.connect(sock_server)
         data = sys.argv[1]
         data+=' '+sys.argv[2]
-        print 'sending data:',data
         client_sock.sendall(data)
         print client_sock.recv(1024)
     except Exception as err:
